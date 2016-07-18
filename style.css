@@ -17,3 +17,6 @@ body{
     color:blue;
 }
 
+.img-circle {
+    border-radius: 50%;
+}
