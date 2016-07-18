@@ -20,22 +20,3 @@ body{
 .img-circle {
     border-radius: 50%;
 } 
-
-div {
-    width: 200px;
-    height: 100px;
-    background-color:green;
-    -webkit-animation-name:idk;
-    -webkit-animation-duratoin: 6s;
-    animation-name: idk;
-    animation-duration: 6s;
-}
-@-webkit-keyframes example {
-    from {background-color:green;}
-    to {background-color:red;}
-}
-
-@keyframes example {
-    from {background-color:green;}
-    to {background-color:red;}
-}
