@@ -1,4 +1,5 @@
 function sayThatWasEasy() {
+    console.log("daskjdfa");
     var thatWasEasy = new Audio("feels_bad_man_k.mp3");
     thatWasEasy.play();
 }
