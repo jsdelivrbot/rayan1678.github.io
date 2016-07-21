@@ -6,6 +6,7 @@ var isGameOver;
 var backgroundImage;
 var enemy2;
 var enemy2Image;
+ 
 
 function preload() {
     playerImage = loadImage("Pikachu_pic.png");
@@ -59,9 +60,13 @@ if (enemy2.overlap(player)) {
 function gameOver() {
     background(0);
     textAlign(CENTER);
+    textSize(20);
     fill("white");
-    text("Feels Bad Man", width/2, height/2);
+    text("Feels Bad Man", width/2, height/4);
+    text("Use left and right arrow keys to avoid getting caught", width/2, height/2);
     text("Click anywhere to try again", width/2, 3*height/4);
+
+
 }
 }
 function mouseClicked() {
