@@ -4,11 +4,14 @@ var enemy;
 var enemyImage;
 var isGameOver;
 var backgroundImage;
+var enemy2;
+var enemy2Image;
 
 function preload() {
     playerImage = loadImage("Pikachu_pic.png");
-    enemyImage = loadImage("pokeball.png")
-    backgroundImage = loadImage("Pokemon_stadium.png")
+    enemyImage = loadImage("pokeball.png");
+    backgroundImage = loadImage("Pokemon_stadium.png");
+    enemy2Image = loadImage("pokeball.png");
 }
 
 function setup() {
@@ -16,8 +19,10 @@ function setup() {
     createCanvas(638,834);
     player = createSprite(width/2, height-80, 50, 50);
     player.addImage(playerImage);
-    enemy = createSprite(width/6, 0, 20, 30);
+    enemy = createSprite(width/2, 0, 20, 30);
     enemy.addImage(enemyImage);
+    enemy2 = createSprite(width/2, 0, 20, 30);
+    enemy2.addImage(enemy2Image);
     isGameOver = false;
 }
 
@@ -28,17 +33,25 @@ function draw() {
     background(backgroundImage);
     
     if (keyDown(RIGHT_ARROW) && player.position.x < (width - (playerImage.width/2))) {
-        player.position.x = player.position.x += 20;
+        player.position.x = player.position.x += 45;
 }
     if (keyDown(LEFT_ARROW) && player.position.x > (playerImage.width/2)) {
-        player.position.x = player.position.x -= 20;
+        player.position.x = player.position.x -= 45;
 }    
     enemy.position.y = enemy.position.y + 20;
+    enemy2.position.y = enemy.position.y + 20;
 if (enemy.position.y > height) {
     enemy.position.y = 0;
     enemy.position.x = random(5, width-5); 
 }
+if (enemy2.position.y > height) {
+    enemy2.position.y = 0;
+    enemy2.position.x = random(5, width-5); 
+}
 if (enemy.overlap(player)) {
+    isGameOver= true;
+}
+if (enemy2.overlap(player)) {
     isGameOver= true;
 }
     drawSprites();
@@ -58,5 +71,7 @@ function mouseClicked() {
     player.position.y = height-80;
     enemy.position.x = width/2;
     enemy.position.y = 0;
+    enemy2.position.x = width/2;
+    enemy2.position.y = 0;
 }
 }
