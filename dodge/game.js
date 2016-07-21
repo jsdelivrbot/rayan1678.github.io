@@ -28,10 +28,10 @@ function draw() {
     background(backgroundImage);
     
     if (keyDown(RIGHT_ARROW) && player.position.x < (width - (playerImage.width/2))) {
-        player.position.x = player.position.x += 6;
+        player.position.x = player.position.x += 20;
 }
     if (keyDown(LEFT_ARROW) && player.position.x > (playerImage.width/2)) {
-        player.position.x = player.position.x -= 6;
+        player.position.x = player.position.x -= 20;
 }    
     enemy.position.y = enemy.position.y + 20;
 if (enemy.position.y > height) {
