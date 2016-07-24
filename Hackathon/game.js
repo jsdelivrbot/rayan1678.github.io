@@ -7,10 +7,14 @@ var projectile2;
 var backgroundImage;
 var isGameOver;
 var background;
+var projectile1Image;
+var projectile2Image;
 
 function preload(){
     player1Image = loadImage("Primal_Panda.png");
     player2Image = loadImage("pancham___gen_vi_pokemon_sprite_by_spalding004-d64vsve.png");
+    projectile1Image = loadImage("1318.png");
+    projectile2Image = loadImage("pokeballsprite.png");
     backgroundImage = loadImage("Pokemon_stadium.png");
 }
 function setup() {
@@ -21,9 +25,9 @@ function setup() {
     player2 = createSprite(800, height / 2, 40, 40);
     player2.addImage(player2Image);
     projectile1 = createSprite(0, height / 2, 26, 18);
+    projectile1.addImage(projectile1Image);
     projectile2 = createSprite(800, height / 2, 26, 18);
-    
-
+    projectile2.addImage(projectile2Image);
 }
 
 function draw() {
