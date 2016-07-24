@@ -29,7 +29,7 @@ function draw() {
     }
     else {
         background(0, 0, 100);
-        if (keyDown(68) && player1.position.x < width) {
+        if (keyDown(68) && player1.position.x < width/2) {
             player1.position.x = player1.position.x += 4;
         }
         if (keyDown(65) && player1.position.x > 0) {
@@ -50,7 +50,7 @@ function draw() {
         if (keyDown(RIGHT_ARROW) && player2.position.x < width) {
             player2.position.x = player2.position.x += 4;
         }
-        if (keyDown(LEFT_ARROW) && player2.position.x > 0) {
+        if (keyDown(LEFT_ARROW) && player2.position.x > width/2) {
             player2.position.x = player2.position.x -= 4;
         }
        
