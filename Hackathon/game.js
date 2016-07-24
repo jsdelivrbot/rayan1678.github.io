@@ -6,13 +6,15 @@ var projectile1;
 var projectile2;
 var backgroundImage;
 var isGameOver;
+var background;
 
 function preload(){
-    player1Image = loadImage("Primal_Panda.png")
-    player2Image = loadImage("pancham___gen_vi_pokemon_sprite_by_spalding004-d64vsve.png")
+    player1Image = loadImage("Primal_Panda.png");
+    player2Image = loadImage("pancham___gen_vi_pokemon_sprite_by_spalding004-d64vsve.png");
+    backgroundImage = loadImage("Pokemon_stadium.png");
 }
 function setup() {
-    createCanvas(800, 520);
+    createCanvas(800, 611);
     isGameOver = false;
     player1 = createSprite(0, height / 2, 40, 40);
     player1.addImage(player1Image);
@@ -20,6 +22,7 @@ function setup() {
     player2.addImage(player2Image);
     projectile1 = createSprite(0, height / 2, 26, 18);
     projectile2 = createSprite(800, height / 2, 26, 18);
+    
 
 }
 
@@ -28,7 +31,7 @@ function draw() {
         gameOver();
     }
     else {
-        background(0, 0, 100);
+        background(backgroundImage);
         if (keyDown(68) && player1.position.x < width/2) {
             player1.position.x = player1.position.x += 4;
         }
