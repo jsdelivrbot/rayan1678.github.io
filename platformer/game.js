@@ -85,6 +85,7 @@ function endGame() {
 
  function mouseClicked() {
      if (isGameOver) {
+         
          for (var n = 0; n < numGroundSprites; n++) {
              var groundSprite = GroundSprites[n];
              groundSprite.position.x = n*50;
@@ -95,7 +96,8 @@ function endGame() {
          
          obstacleSprites.removeSprites();
          
-         score = 0;
          isGameOver = false;
+         score = 0;
+        
      }
  }
