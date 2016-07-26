@@ -3,9 +3,14 @@ var playerImage;
 
 var enemy;
 var enemeyImage;
+var eix;
 
 var projectile;
 var projectileImage;
+
+function preload() {
+    eix = loadImage("eix.png");
+}
 
 function setup() {
     createCanvas(611, 800);
@@ -35,5 +40,19 @@ function draw() {
     }
     projectile.position.x = projectile.position.x;
     projectile.position.y = projectile.position.y -= 10;
+    
+    enemy.position.y = enemy.position.y + 3;
+if (enemy.position.y > height) {
+    enemy.position.y = 0;
+}
+    enemy.position.x = enemy.position.x + 6;
+if (enemy.position.x > width){
+    enemy.position.x = 0;
+}
+    
+if (projectile.overlap(enemy)){
+    enemy.addImage(eix);
+    
+}
     drawSprites();    
 }
