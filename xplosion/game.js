@@ -2,6 +2,8 @@ var player;
 var playerImage;
 
 var enemy;
+var enemy2;
+var enemy3;
 var enemeyImage;
 var eix;
 
@@ -18,6 +20,9 @@ function setup() {
     player = createSprite(width/2, 800, 40,40);
     enemy = createSprite(width/2, 0, 60, 60);
     projectile = createSprite(width/2, 790, 20, 20);
+    enemy2 = createSprite(width/2, 0, 60, 60);
+    enemy3 = createSprite(width/2, 0, 60, 60);
+
 }
  
 function draw() {
@@ -49,10 +54,33 @@ if (enemy.position.y > height) {
 if (enemy.position.x > width){
     enemy.position.x = 0;
 }
-    
+    enemy2.position.y = enemy2.position.y + 3;
+if (enemy2.position.y > height) {
+    enemy2.position.y = 0;
+}
+    enemy2.position.x = enemy2.position.x + 6;
+if (enemy2.position.x > width){
+    enemy2.position.x = 0;
+}
+    enemy3.position.y = enemy3.position.y + 3;
+if (enemy3.position.y > height) {
+    enemy3.position.y = 0;
+}
+    enemy3.position.x = enemy3.position.x + 6;
+if (enemy3.position.x > width){
+    enemy3.position.x = 0;
+}
 if (projectile.overlap(enemy)){
     enemy.addImage(eix);
-    
-}
+    enemy2 = createSprite(width/2, 0, 60, 60);
+ }
+ if (projectile.overlap(enemy2)){
+    enemy2.addImage(eix);
+    enemy3 = createSprite(width/2, 0, 60, 60);
+ }
+  if (projectile.overlap(enemy3)){
+    enemy3.addImage(eix);
+ }
+
     drawSprites();    
 }
