@@ -70,10 +70,10 @@ function draw(){
      }
      
     obstacleSprites.overlap(player, endGame);
-   drawSprites();
-   score = score + 1;
-   textAlign(CENTER);
-   text(score, camera.position.x, 10);
+    drawSprites();
+    score = score + 1;
+    textAlign(CENTER);
+    text(score, camera.position.x, 10);
     camera.position.x = player.position.x + (width/4);
     
     }
@@ -82,20 +82,20 @@ function draw(){
 function endGame() {
     isGameOver = true;
 }
-function mouseClicked() {
-    console.log
-    if (isGameOver) {
-        for (var n = 0; n < numGroundSprites; n++) {
-            var groundSprite = groundSprites[n];
-            groundSprite.position.x = n*50;
-        }
-        player.position.x = 100;
-        player.position.y = height-75;
-        
-        obstacleSprites.removesSprites();
 
-        score = 0;
-        isGameOver = false; 
+ function mouseClicked() {
+     if (isGameOver) {
+         for (var n = 0; n < numGroundSprites; n++) {
+             var groundSprite = GroundSprites[n];
+             groundSprite.position.x = n*50;
+         }
+         
+         player.position.x = 100;
+         player.position.y = height-75;
+         
+         obstacleSprites.removeSprites();
+         
+         score = 0;
+         isGameOver = false;
      }
  }
-    
