@@ -29,11 +29,11 @@ function draw() {
     if (keyDown(LEFT_ARROW) && player.position.x > 0) {
         player.position.x = player.position.x -=4;
     }
-    if (keyDown(32) && projectile.position.y > 0) {
-        projectile.position.y = player.position.y + 10;
+    if (keyDown(32) && projectile.position.y < 0) {
+        projectile.position.y = player.position.y -= 10;
         projectile.position.x = player.position.x;
     }
-    projectile.position.x = projectile.position.y;
-    projectile.position.y = projectile.position.x;
+    projectile.position.x = projectile.position.x;
+    projectile.position.y = projectile.position.y -= 10;
     drawSprites();    
 }
