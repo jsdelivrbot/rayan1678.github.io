@@ -28,7 +28,7 @@ function draw() {
     // console.log(points.length);
     for (var i = 0; i < points.length; i++){
         var point = points[i];
-        ellipse(point.x, point.y, 5, 5);
+        triangle(point.x, point.y, point.y, 5, 5);
         
     }
 }
