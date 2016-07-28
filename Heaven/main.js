@@ -4,7 +4,7 @@ $('#Us').click(function() {
 }); 
 
 $('#cold').click(function() {
-  window.location='https://www.youtube.com/watch?v=Ll1seZzlF0o';
+  window.location='https://www.youtube.com/watch?v=EZ31jEGZ1e8';
 });
 
 $('#prank').click(function() {
