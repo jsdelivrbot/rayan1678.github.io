@@ -1,5 +1,3 @@
-function sayXd() {
-    var xd = new Audio("feels_bad_man_k.mp3");
-    xd.play();
-}
-$("#xd").on("click", sayXd);
+$('#xd').click(function() {
+  window.location='https://rayan1678.github.io/Heaven/';
+}); 
